@@ -12,6 +12,7 @@ public:
     int guessNumber(int n) {
         
         while(guess(n)!=0){
+           
             if(guess(n) == 1){
                 n++;
                 
@@ -22,7 +23,6 @@ public:
                 
             }
             
-            else break;
         }
         return n;
     }
