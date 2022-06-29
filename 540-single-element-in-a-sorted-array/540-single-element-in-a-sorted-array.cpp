@@ -3,9 +3,9 @@ public:
     int singleNonDuplicate(vector<int>& nums) {
         
         int l  = 0, r = nums.size()-1;
-        int mid = (l+r)/2, flag = 0;
+        int mid = (l+r)/2;
         
-         if(r == 0){
+        if(r == 0){
             return nums[0];
         }
         
@@ -17,11 +17,12 @@ public:
             return nums[0];
         }
         
-        while(flag == 0){
+        
+        while(true){
             
             if(nums[mid-1]!=nums[mid] && nums[mid+1]!=nums[mid]){
-                flag = 1;
-                break;
+                
+                return nums[mid];
             }
             
             if(mid%2 == 0){
