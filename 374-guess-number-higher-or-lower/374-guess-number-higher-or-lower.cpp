@@ -11,19 +11,25 @@ class Solution {
 public:
     int guessNumber(int n) {
         
-        while(guess(n)!=0){
-           
-            if(guess(n) == 1){
-                n++;
+        long l = 0;
+        long r = n;
+        
+        long mid = (l+r)/2;
+        
+        while(guess(mid)!=0){
+            if(guess(mid)>0){
+                l = mid+1;
+                mid = (l+r)/2;
                 
             }
             
-            else if(guess(n) == -1){
-                n--;
+            else if(guess(mid)<0){
+                r = mid-1;
+                mid = (l+r)/2;
                 
             }
-            
+            else break;
         }
-        return n;
+        return mid;
     }
 };
